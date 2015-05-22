@@ -441,62 +441,61 @@
     longitudeStr = [[NSNumber numberWithDouble:self.myLocation.longitude] stringValue];
     
     
-//    NSString *urlString = [NSString stringWithFormat:@"http://www.meiy.5gbfree.com/updateQuery.php?lat=%@&long=%@&devid=002&acc=%@&appstate=%@ WHERE phnum=8095496009",latitudeStr,longitudeStr,accuracyStr,deviceStateStr];
-//    urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-//    urlString = [urlString stringByReplacingOccurrencesOfString:@"/n" withString:@"%0A"];
-//
-//    NSURL *url = [[NSURL alloc]initWithString:urlString];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.meiy.5gbfree.com/updateQuery.php?lat=%@&long=%@&devid=002&acc=%@&appstate=%@ WHERE phnum=8095496009",latitudeStr,longitudeStr,accuracyStr,deviceStateStr];
+    urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    urlString = [urlString stringByReplacingOccurrencesOfString:@"/n" withString:@"%0A"];
+    NSURL *url = [[NSURL alloc]initWithString:urlString];
 //    
 //    
 //    NSData *data = [NSData dataWithContentsOfURL:url];
     
     
-    NSURL *url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"http://www.meiy.5gbfree.com/servicequery.php?name=Meiy&phnum=123546589&bg=B&devid=001&lat=%@&long=%@&acc=%@&appstate=%@",latitudeStr,longitudeStr,accuracyStr,dateAndTimeStr]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    
-    int latDecimalValue = [latitudeStr intValue];
-    int longDecimalValue = [longitudeStr intValue];
-    
-    
-    if (![latitudeStr intValue] == 0) {
-        
-        NSRange range = [latitudeStr rangeOfString:@"." options: NSBackwardsSearch];
-        NSString *latRemString = [latitudeStr substringFromIndex:(range.location+1)];
-        NSLog(@"%@",latRemString);
-        
-        NSRange range2 = [longitudeStr rangeOfString:@"." options: NSBackwardsSearch];
-        NSString *longRemString = [latitudeStr substringFromIndex:(range2.location+1)];
-        NSLog(@"%@",longRemString);
-        
-        int topLeftLat      = [latRemString intValue]   + 4000;
-        int topLeftLong     = [longRemString intValue]  - 4000;
-        int bottomRightLat  = [latRemString intValue]   - 4000;
-        int bottomRightLong = [longRemString intValue]  + 4000;
-        
-        NSLog(@"\n\n TopLestLat:::%d",topLeftLat);
-        NSLog(@"\n\n topLeftLong:::%d",topLeftLong);
-        NSLog(@"\n\n bottomRightLat:::%d",bottomRightLat);
-        NSLog(@"\n\n bottomRightLong:::%d",bottomRightLong);
-        
-        
-        NSString *appendStrTopLeftLat = [NSString stringWithFormat:@"%d",latDecimalValue];
-        appendStrTopLeftLat = [appendStrTopLeftLat stringByAppendingString:[NSString stringWithFormat:@".%d",topLeftLat]];
-        
-        NSString *appendStrTopLeftLong = [NSString stringWithFormat:@"%d",longDecimalValue];
-        appendStrTopLeftLong = [appendStrTopLeftLong stringByAppendingString:[NSString stringWithFormat:@".%d",topLeftLong]];
-        
-        NSString *appendStrBottomRightLat = [NSString stringWithFormat:@"%d",latDecimalValue];
-        appendStrBottomRightLat = [appendStrBottomRightLat stringByAppendingString:[NSString stringWithFormat:@".%d",bottomRightLat]];
-        
-        NSString *appendStrBottomRightLong = [NSString stringWithFormat:@"%d",longDecimalValue];
-        appendStrBottomRightLong = [appendStrBottomRightLong stringByAppendingString:[NSString stringWithFormat:@".%d",bottomRightLong]];
-        
-        
-        if (([appendStrTopLeftLat intValue] < [latitudeStr intValue]) && ([appendStrBottomRightLat intValue] > [latitudeStr intValue]) && ([appendStrTopLeftLong intValue] < [longitudeStr intValue]) && ([appendStrBottomRightLong intValue] > [longitudeStr intValue])) {
-            
-            [self alaramMethod];
-        }
-    }
+//    NSURL *url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"http://www.meiy.5gbfree.com/servicequery.php?name=Meiy&phnum=123546589&bg=B&devid=001&lat=%@&long=%@&acc=%@&appstate=%@",latitudeStr,longitudeStr,accuracyStr,dateAndTimeStr]];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
+//    
+//    int latDecimalValue = [latitudeStr intValue];
+//    int longDecimalValue = [longitudeStr intValue];
+//    
+//    
+//    if (![latitudeStr intValue] == 0) {
+//        
+//        NSRange range = [latitudeStr rangeOfString:@"." options: NSBackwardsSearch];
+//        NSString *latRemString = [latitudeStr substringFromIndex:(range.location+1)];
+//        NSLog(@"%@",latRemString);
+//        
+//        NSRange range2 = [longitudeStr rangeOfString:@"." options: NSBackwardsSearch];
+//        NSString *longRemString = [latitudeStr substringFromIndex:(range2.location+1)];
+//        NSLog(@"%@",longRemString);
+//        
+//        int topLeftLat      = [latRemString intValue]   + 4000;
+//        int topLeftLong     = [longRemString intValue]  - 4000;
+//        int bottomRightLat  = [latRemString intValue]   - 4000;
+//        int bottomRightLong = [longRemString intValue]  + 4000;
+//        
+//        NSLog(@"\n\n TopLestLat:::%d",topLeftLat);
+//        NSLog(@"\n\n topLeftLong:::%d",topLeftLong);
+//        NSLog(@"\n\n bottomRightLat:::%d",bottomRightLat);
+//        NSLog(@"\n\n bottomRightLong:::%d",bottomRightLong);
+//        
+//        
+//        NSString *appendStrTopLeftLat = [NSString stringWithFormat:@"%d",latDecimalValue];
+//        appendStrTopLeftLat = [appendStrTopLeftLat stringByAppendingString:[NSString stringWithFormat:@".%d",topLeftLat]];
+//        
+//        NSString *appendStrTopLeftLong = [NSString stringWithFormat:@"%d",longDecimalValue];
+//        appendStrTopLeftLong = [appendStrTopLeftLong stringByAppendingString:[NSString stringWithFormat:@".%d",topLeftLong]];
+//        
+//        NSString *appendStrBottomRightLat = [NSString stringWithFormat:@"%d",latDecimalValue];
+//        appendStrBottomRightLat = [appendStrBottomRightLat stringByAppendingString:[NSString stringWithFormat:@".%d",bottomRightLat]];
+//        
+//        NSString *appendStrBottomRightLong = [NSString stringWithFormat:@"%d",longDecimalValue];
+//        appendStrBottomRightLong = [appendStrBottomRightLong stringByAppendingString:[NSString stringWithFormat:@".%d",bottomRightLong]];
+//        
+//        
+//        if (([appendStrTopLeftLat intValue] < [latitudeStr intValue]) && ([appendStrBottomRightLat intValue] > [latitudeStr intValue]) && ([appendStrTopLeftLong intValue] < [longitudeStr intValue]) && ([appendStrBottomRightLong intValue] > [longitudeStr intValue])) {
+//            
+//            [self alaramMethod];
+//        }
+//    }
 }
 
 - (void)testM {
