@@ -17,6 +17,7 @@
 		1D4D72D81A54F873000BD788 /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D72D51A54F873000BD788 /* LocationShareModel.m */; };
 		1D4D72DA1A54F882000BD788 /* Location-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D72D91A54F882000BD788 /* Location-Info.plist */; };
 		27DF34451ACD209C00FAE070 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF34441ACD209C00FAE070 /* TabBarViewController.m */; };
+		F24652541B11D41600EABB9C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24652531B11D41600EABB9C /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		27DF34431ACD209C00FAE070 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		27DF34441ACD209C00FAE070 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		F23557011AD45A3000E025FD /* Annoying.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Annoying.caf; sourceTree = "<group>"; };
+		F24652521B11D41600EABB9C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
+		F24652531B11D41600EABB9C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 		1D4D72A91A54F80B000BD788 /* GettingLocationWhenSuspended */ = {
 			isa = PBXGroup;
 			children = (
+				F24652521B11D41600EABB9C /* HomeViewController.h */,
+				F24652531B11D41600EABB9C /* HomeViewController.m */,
 				1D4D72D01A54F873000BD788 /* LocationAppDelegate.h */,
 				1D4D72D11A54F873000BD788 /* LocationAppDelegate.m */,
 				1D4D72D21A54F873000BD788 /* LocationViewController.h */,
@@ -245,6 +250,7 @@
 				1D4D72D81A54F873000BD788 /* LocationShareModel.m in Sources */,
 				1D4D72AD1A54F80B000BD788 /* main.m in Sources */,
 				1D4D72D71A54F873000BD788 /* LocationViewController.m in Sources */,
+				F24652541B11D41600EABB9C /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

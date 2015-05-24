@@ -311,7 +311,7 @@
     
     NSLog(@"Dict: %@",self.shareModel.myLocationDictInPlist);
     
-    [self callWebService];
+//    [self callWebService];
     
 }
 
@@ -422,7 +422,7 @@
         NSLog(@"Couldn't save LocationArray.plist" );
     }
     
-    [self callWebService];
+//    [self callWebService];
     
     
     
@@ -441,7 +441,7 @@
     longitudeStr = [[NSNumber numberWithDouble:self.myLocation.longitude] stringValue];
     
     
-    NSString *urlString = [NSString stringWithFormat:@"http://www.meiy.5gbfree.com/updateQuery.php?lat=%@&long=%@&devid=002&acc=%@&appstate=%@ WHERE phnum=8095496009",latitudeStr,longitudeStr,accuracyStr,deviceStateStr];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.meiy.5gbfree.com/updateQuery.php?lat=%@&long=%@&devid=002&acc=%@&appstate=%@&phnum=8095496009",latitudeStr,longitudeStr,accuracyStr,deviceStateStr];
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     urlString = [urlString stringByReplacingOccurrencesOfString:@"/n" withString:@"%0A"];
     NSURL *url = [[NSURL alloc]initWithString:urlString];
