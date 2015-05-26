@@ -9,7 +9,7 @@
 
 #import "LocationAppDelegate.h"
 #import "TabBarViewController.h"
-#import "LocationViewController.h"
+#import "SetUpScreenViewController.h"
 
 @interface LocationAppDelegate()
 {
@@ -59,7 +59,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    LocationViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"locationViewControllerID"];
+    SetUpScreenViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"locationViewControllerID"];
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

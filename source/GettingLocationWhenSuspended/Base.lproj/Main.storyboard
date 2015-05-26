@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Location View Controller-->
+        <!--Set Up Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="locationViewControllerID" id="vXZ-lx-hvc" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationViewControllerID" id="vXZ-lx-hvc" customClass="SetUpScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -44,6 +44,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnForNextView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xpb-Mb-6LT"/>
+                                    <segue destination="KZY-aj-EXH" kind="show" id="c00-aj-GaE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,6 +60,7 @@
                             <constraint firstItem="7le-vx-x5c" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="15" id="wdW-nv-t0C"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iIl-rv-ldh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="userNameTextField" destination="oq1-Ab-Jca" id="amn-Dd-T0h"/>
@@ -67,9 +69,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-77"/>
+            <point key="canvasLocation" x="824" y="-77"/>
         </scene>
-        <!--Location-->
+        <!--Current Location-->
         <scene sceneID="OJl-7e-ZOa">
             <objects>
                 <viewController id="gXf-17-gXk" sceneMemberID="viewController">
@@ -81,7 +83,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aIN-RK-olq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aIN-RK-olq">
                                 <rect key="frame" x="0.0" y="28" width="320" height="491"/>
                             </mapView>
                         </subviews>
@@ -93,11 +95,12 @@
                             <constraint firstItem="aIN-RK-olq" firstAttribute="leading" secondItem="h2S-4n-tLh" secondAttribute="leading" id="hJA-2Y-DL0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Location" id="NX2-21-9VX"/>
+                    <navigationItem key="navigationItem" title="Current Location" id="PmD-S1-eDJ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2r-DW-nih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="256"/>
+            <point key="canvasLocation" x="1682" y="-77"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="b7v-v2-y1V">
@@ -108,7 +111,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6OF-qs-iuP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="79C-sT-Wsl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Source Point" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-TE-EM3">
@@ -134,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Lq-3F-8TW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-398"/>
+            <point key="canvasLocation" x="3407" y="-398"/>
         </scene>
         <!--Current Location-->
         <scene sceneID="Krm-Ux-0nG">
@@ -167,26 +170,6 @@
             </objects>
             <point key="canvasLocation" x="1273" y="-849"/>
         </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="bds-jG-Spi">
-            <objects>
-                <tabBarController storyboardIdentifier="TabBarViewControllerID" id="W4V-cq-dX3" customClass="TabBarViewController" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="uGh-92-VdA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="6dT-y1-73a" kind="relationship" relationship="viewControllers" id="tQE-aD-23K"/>
-                        <segue destination="gXf-17-gXk" kind="relationship" relationship="viewControllers" id="uE6-6E-3RZ"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mGa-Dt-HuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="383" y="-72"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="19w-nt-PLB">
             <objects>
@@ -205,6 +188,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynb-HM-MYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="770" y="-849"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="KXF-2M-zuT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZY-aj-EXH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Location" id="NX2-21-9VX"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LcY-oW-6x2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gXf-17-gXk" kind="relationship" relationship="rootViewController" id="6od-Wn-bUh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gv5-kL-Azw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="-77"/>
         </scene>
     </scenes>
 </document>

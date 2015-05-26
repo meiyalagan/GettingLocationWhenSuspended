@@ -7,7 +7,7 @@
 //
 
 #import "TabBarViewController.h"
-#import "LocationViewController.h"
+#import "SetUpScreenViewController.h"
 @interface TabBarViewController ()
 
 @end

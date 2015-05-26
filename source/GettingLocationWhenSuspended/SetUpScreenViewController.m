@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Location. All rights reserved.
 //
 
-#import "LocationViewController.h"
+#import "SetUpScreenViewController.h"
 #import "TabBarViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "LocationShareModel.h"
 
-@interface LocationViewController ()
+@interface SetUpScreenViewController ()
 {
     CLLocationManager *locationManager;
 }
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation LocationViewController
+@implementation SetUpScreenViewController
 
 - (IBAction)btnForBloodGroup:(id)sender {
     
