@@ -7,15 +7,23 @@
 //
 
 #import "HomeViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "LocationShareModel.h"
+#import <MapKit/MapKit.h>
 
 @interface HomeViewController ()
-
+{
+  CLLocationManager *locationManager;
+  
+  IBOutlet MKMapView *map;
+}
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  map.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -23,6 +31,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+  MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+  [map setRegion:[map regionThatFits:region] animated:YES];
+  
+  
+  MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+  point.coordinate = userLocation.coordinate;
+  point.title = @"Current Location";
+  point.subtitle = @"I'm here!!!";
+  
+  [map addAnnotation:point];
+  
+}
+
+
+
+
 
 /*
 #pragma mark - Navigation

@@ -17,6 +17,9 @@
 		1D4D72D81A54F873000BD788 /* LocationShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D4D72D51A54F873000BD788 /* LocationShareModel.m */; };
 		1D4D72DA1A54F882000BD788 /* Location-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D4D72D91A54F882000BD788 /* Location-Info.plist */; };
 		27DF34451ACD209C00FAE070 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DF34441ACD209C00FAE070 /* TabBarViewController.m */; };
+		D306E7621B14BBCF0013E8F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D306E7611B14BBCF0013E8F2 /* MapKit.framework */; };
+		D306E7641B14BBDB0013E8F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D306E7631B14BBDB0013E8F2 /* CoreLocation.framework */; };
+		D306E7661B14BD470013E8F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D306E7651B14BD470013E8F2 /* QuartzCore.framework */; };
 		F24652541B11D41600EABB9C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24652531B11D41600EABB9C /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		1D4D72D91A54F882000BD788 /* Location-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Location-Info.plist"; sourceTree = "<group>"; };
 		27DF34431ACD209C00FAE070 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		27DF34441ACD209C00FAE070 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		D306E7611B14BBCF0013E8F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D306E7631B14BBDB0013E8F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D306E7651B14BD470013E8F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F23557011AD45A3000E025FD /* Annoying.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Annoying.caf; sourceTree = "<group>"; };
 		F24652521B11D41600EABB9C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
 		F24652531B11D41600EABB9C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
@@ -58,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D306E7661B14BD470013E8F2 /* QuartzCore.framework in Frameworks */,
+				D306E7641B14BBDB0013E8F2 /* CoreLocation.framework in Frameworks */,
+				D306E7621B14BBCF0013E8F2 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +83,7 @@
 		1D4D729E1A54F80B000BD788 = {
 			isa = PBXGroup;
 			children = (
+				D306E7651B14BD470013E8F2 /* QuartzCore.framework */,
 				1D4D72A91A54F80B000BD788 /* GettingLocationWhenSuspended */,
 				1D4D72C31A54F80B000BD788 /* GettingLocationWhenSuspendedTests */,
 				1D4D72A81A54F80B000BD788 /* Products */,
@@ -92,6 +102,8 @@
 		1D4D72A91A54F80B000BD788 /* GettingLocationWhenSuspended */ = {
 			isa = PBXGroup;
 			children = (
+				D306E7631B14BBDB0013E8F2 /* CoreLocation.framework */,
+				D306E7611B14BBCF0013E8F2 /* MapKit.framework */,
 				F24652521B11D41600EABB9C /* HomeViewController.h */,
 				F24652531B11D41600EABB9C /* HomeViewController.m */,
 				1D4D72D01A54F873000BD788 /* LocationAppDelegate.h */,

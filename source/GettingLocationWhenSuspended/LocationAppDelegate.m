@@ -10,6 +10,7 @@
 #import "LocationAppDelegate.h"
 #import "TabBarViewController.h"
 #import "SetUpScreenViewController.h"
+#import "HomeViewController.h"
 
 @interface LocationAppDelegate()
 {
@@ -70,7 +71,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    TabBarViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarViewControllerID"];
+    HomeViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewControllerID"];
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
