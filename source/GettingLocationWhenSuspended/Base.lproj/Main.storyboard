@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oq1-Ab-Jca">
-                                <rect key="frame" x="16" y="73" width="288" height="30"/>
+                                <rect key="frame" x="16" y="73" width="382" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6f0-Aa-Vcu"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kZY-eW-aJC">
-                                <rect key="frame" x="16" y="137" width="288" height="30"/>
+                                <rect key="frame" x="16" y="137" width="382" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vcH-1D-diV"/>
                                 </constraints>
@@ -34,7 +34,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7le-vx-x5c">
-                                <rect key="frame" x="258" y="35" width="32" height="30"/>
+                                <rect key="frame" x="352" y="35" width="32" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Add-ID-Cwu"/>
                                     <constraint firstAttribute="width" constant="32" id="eku-Ks-0Iz"/>
@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iIl-rv-ldh"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="userNameTextField" destination="oq1-Ab-Jca" id="amn-Dd-T0h"/>
                         <outlet property="userPhoneNumberTextField" destination="kZY-eW-aJC" id="uv9-mh-UbI"/>
@@ -70,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="1014" y="-330"/>
         </scene>
-        <!--Current Location-->
+        <!--Home View Controller-->
         <scene sceneID="OJl-7e-ZOa">
             <objects>
                 <viewController storyboardIdentifier="HomeViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gXf-17-gXk" customClass="HomeViewController" sceneMemberID="viewController">
@@ -79,33 +79,68 @@
                         <viewControllerLayoutGuide type="bottom" id="WYk-GB-gWt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="h2S-4n-tLh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LI1-3b-4HM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <connections>
                                     <outlet property="delegate" destination="gXf-17-gXk" id="cJo-Kh-zVv"/>
                                 </connections>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCJ-1v-TqD">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lHx-Ae-Hcv"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Current Location" id="tb6-C8-yWC">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="kgc-Yo-Q8b">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iOs-t5-zNU">
+                                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="iJg-GH-orF">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="huz-cv-UzL">
+                                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LI1-3b-4HM" firstAttribute="leading" secondItem="h2S-4n-tLh" secondAttribute="leading" id="3ja-Yd-B14"/>
-                            <constraint firstAttribute="trailing" secondItem="LI1-3b-4HM" secondAttribute="trailing" id="KUR-1t-B9I"/>
-                            <constraint firstItem="LI1-3b-4HM" firstAttribute="top" secondItem="DLq-FA-LvR" secondAttribute="bottom" id="YZq-h4-ONN"/>
-                            <constraint firstItem="WYk-GB-gWt" firstAttribute="top" secondItem="LI1-3b-4HM" secondAttribute="bottom" id="kca-qB-nkP"/>
+                            <constraint firstItem="TCJ-1v-TqD" firstAttribute="leading" secondItem="h2S-4n-tLh" secondAttribute="leading" id="0tJ-jy-HtT"/>
+                            <constraint firstItem="LI1-3b-4HM" firstAttribute="top" secondItem="TCJ-1v-TqD" secondAttribute="bottom" id="5c0-xe-NwM"/>
+                            <constraint firstItem="TCJ-1v-TqD" firstAttribute="top" secondItem="DLq-FA-LvR" secondAttribute="bottom" id="6Cw-UC-xAg"/>
+                            <constraint firstAttribute="trailing" secondItem="LI1-3b-4HM" secondAttribute="trailing" id="8ak-k4-bGS"/>
+                            <constraint firstItem="WYk-GB-gWt" firstAttribute="top" secondItem="LI1-3b-4HM" secondAttribute="bottom" id="BNk-Fy-Amt"/>
+                            <constraint firstItem="LI1-3b-4HM" firstAttribute="leading" secondItem="h2S-4n-tLh" secondAttribute="leading" id="Xfe-hy-qW9"/>
+                            <constraint firstAttribute="trailing" secondItem="TCJ-1v-TqD" secondAttribute="trailing" id="tEs-lJ-mmr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Location" id="PmD-S1-eDJ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="map" destination="LI1-3b-4HM" id="9WZ-5M-9sL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2r-DW-nih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357" y="-330"/>
+            <point key="canvasLocation" x="1557" y="-398"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="b7v-v2-y1V">
