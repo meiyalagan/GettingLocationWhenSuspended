@@ -60,7 +60,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    SetUpScreenViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"locationViewControllerID"];
+    SetUpScreenViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"SetUpScreenViewControllerID"];
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

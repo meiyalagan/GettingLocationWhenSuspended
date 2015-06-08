@@ -10,6 +10,7 @@
 #import "TabBarViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "LocationShareModel.h"
+#import "HomeViewController.h"
 
 @interface SetUpScreenViewController ()
 {
@@ -50,7 +51,11 @@
     
     NSURL *url = [[NSURL alloc]initWithString:[NSString stringWithFormat:@"http://www.meiy.5gbfree.com/servicequery.php?name=%@&phnum=%@&bg=%@&devid=001&lat=%@&long=%@&acc=%@&appstate=%@",self.userNameTextField.text,self.userPhoneNumberTextField.text,self.userBloodGroup.text,strLat,strLong,[self.shareModel.myLocationDictInPlist objectForKey:@"Accuracy"],[self.shareModel.myLocationDictInPlist objectForKey:@"AppState"]]];
     NSData *data = [NSData dataWithContentsOfURL:url];
-    
+  
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+  HomeViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewControllerID"];
+  [self presentViewController:viewController animated:YES completion:nil];
+  
 }
 
 
