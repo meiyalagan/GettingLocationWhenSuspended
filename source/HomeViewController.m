@@ -11,11 +11,9 @@
 #import "LocationShareModel.h"
 #import <MapKit/MapKit.h>
 
-@interface HomeViewController ()
+@interface HomeViewController () <MKMapViewDelegate>
 {
   CLLocationManager *locationManager;
-  
-  IBOutlet MKMapView *map;
 }
 @end
 
@@ -23,9 +21,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  map.delegate = self;
-  map.showsUserLocation = YES;
-  [map setCenterCoordinate:map.userLocation.location.coordinate animated:YES];
+  
+  self.mapView.delegate = self;
+  self.mapView.mapType = MKMapTypeStandard;
+  self.mapView.showsUserLocation = YES;
+  self.searchButton.hidden = YES;
+  
   // Do any additional setup after loading the view.
 }
 
@@ -34,19 +35,44 @@
   // Dispose of any resources that can be recreated.
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-  MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-  [map setRegion:[map regionThatFits:region] animated:YES];
-  
-  
-  MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-  point.coordinate = userLocation.coordinate;
-  point.title = @"Current Location";
-  point.subtitle = @"I'm here!!!";
-  [map addAnnotation:point];
-  
+
+- (IBAction)setMapType:(UISegmentedControl *)sender {
+  switch (sender.selectedSegmentIndex) {
+    case 0:
+      self.mapView.mapType = MKMapTypeStandard;
+      break;
+    case 1:
+      self.mapView.mapType = MKMapTypeSatellite;
+      break;
+    case 2:
+      self.mapView.mapType = MKMapTypeHybrid;
+      break;
+    default:
+      break;
+  }
 }
+
+- (IBAction)zoomToCurrentLocation:(UIBarButtonItem *)sender {
+  float spanX = 0.00725;
+  float spanY = 0.00725;
+  MKCoordinateRegion region;
+  region.center.latitude = self.mapView.userLocation.coordinate.latitude;
+  region.center.longitude = self.mapView.userLocation.coordinate.longitude;
+  region.span.latitudeDelta = spanX;
+  region.span.longitudeDelta = spanY;
+  self.searchButton.hidden = YES;
+  [self.mapView setRegion:region animated:YES];
+}
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+  self.searchButton.hidden = NO;
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+  [self.mapView setCenterCoordinate:userLocation.coordinate animated:YES];
+}
+
+
 
 
 
